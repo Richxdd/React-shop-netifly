@@ -1,0 +1,61 @@
+
+           .android-menu
+           {
+               left: 0;
+               padding: 24px;
+               background-color: white;
+               position: absolute;
+               bottom: 0;
+               box-sizing: border-box;
+               top: 60px;
+           }
+           .android-menu a
+           {
+               text-decoration: none;
+               color: var(--black);
+               font-weight: bold;
+               
+           }
+           .android-menu ul
+           {
+               padding: 0;
+               margin: 24px 0 0;
+               list-style: none;
+           }
+           .android-menu ul:nth-child(1)
+           {
+               border-bottom: 1px solid var(--very-light-pink);
+           }
+           .android-menu ul:nth-child(3)
+           {
+               margin-bottom: 35px;
+           }
+           .android-menu ul li
+           {
+                 margin-bottom: 24px;
+           }
+           .email
+           {
+               font-size: var(--sm);
+               font-weight: 300 !important;
+           }
+           .sign-out
+           {
+               font-size: var(--sm);
+               color: var(--hospital-green) !important;
+           }
+
+           @media(max-width: 640px)
+      {
+          
+         .android-menu 
+         {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height:95vh;
+            width: 100%;
+        }
+
+      }
