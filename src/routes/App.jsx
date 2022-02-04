@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, Route, HashRouter, BrowserRouter } from 'react-router-dom';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Layout from '@containers/Layout';
 import Home from '@pages/Home';
 import Login from '@pages/Login';
@@ -20,7 +20,7 @@ const App = () => {
 	const initialState = useInitialState();
 	return (
 		<AppContext.Provider value={initialState}>
-		
+
 			<BrowserRouter >
 				<Layout>
 					<Switch>
@@ -37,7 +37,7 @@ const App = () => {
 					</Switch>
 				</Layout>
 			</BrowserRouter>
-			
+
 		</AppContext.Provider>
 	);
 }
