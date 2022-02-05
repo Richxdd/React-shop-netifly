@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useRef, useState } from "react"
 import "@styles/Login.scss"
 import logo from "@logos/logo_yard_sale.svg"
 import { useHistory } from "react-router-dom"
+import axios from "axios"
 
 const Login = () => {
   let navigate = useHistory()
@@ -16,26 +17,34 @@ const Login = () => {
       email: formData.get("email"),
       password: formData.get("password"),
     }
-    console.log(datos)
+
     try {
       const API =
         "https://tranquil-ravine-83407.herokuapp.com/api/v1/auth/login"
-      const respuesta = await fetch(API, {
-        method: "POST",
-        body: JSON.stringify(datos),
-        headers: {
-          "Content-Type": "application/json",
-        },
+      // const respuesta = await fetch(API, {
+      //   method: "POST",
+      //   body: JSON.stringify(datos),
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      // })
+      // console.log(respuesta)
+      // const resultado = await respuesta.json()
+      // console.log(resultado)
+      // if (respuesta.status === 200) {
+      //   navigate.push("/")
+      // } else {
+      //   setIncorrecta("Contraseña Incorrecta")
+      // }
+
+      const res = await axios({
+        method: "post",
+        url: API,
+        data: datos,
       })
-      console.log(respuesta)
-      const resultado = await respuesta.json()
-      console.log(resultado)
-      if (respuesta.status === 200) {
-        navigate.push("/")
-      } else {
-        setIncorrecta("Contraseña Incorrecta")
-      }
+      navigate.push("/")
     } catch (error) {
+      setIncorrecta("Contraseña Incorrecta")
       console.log(error)
     }
   }
