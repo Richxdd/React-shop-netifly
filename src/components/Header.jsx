@@ -7,6 +7,7 @@ import logo from "@logos/logo_yard_sale.svg"
 import AppContext from "../context/AppContext"
 import shoppingCart from "@icons/icon_shopping_cart.svg"
 import MenuMobile from "../components/MenuMobile"
+import { Link } from "react-router-dom"
 
 const Header = () => {
   const { state, toggleOrder, toggleMenu, toggleMenuMobile } =
@@ -25,22 +26,22 @@ const Header = () => {
 
         <ul>
           <li>
-            <a href='/'>Todos</a>
+            <Link to='/'>Todos</Link>
           </li>
           <li>
-            <a href='/'>Ropa</a>
+            <Link to='/'>Ropa</Link>
           </li>
           <li>
-            <a href='/'>Electrónica</a>
+            <Link to='/'>Electrónica</Link>
           </li>
           <li>
-            <a href='/'>Muebles</a>
+            <Link to='/'>Muebles</Link>
           </li>
           <li>
-            <a href='/'>Juguetes</a>
+            <Link to='/'>Juguetes</Link>
           </li>
           <li>
-            <a href='/'>Otros</a>
+            <Link to='/'>Otros</Link>
           </li>
         </ul>
       </div>
